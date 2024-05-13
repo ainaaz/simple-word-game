@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/all.js"></script>
+    <link rel="stylesheet" href="style/all.css">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    
+</head>
+<body>
+    <div class="start">
+        <input type="button" value="شروع بازی" id="startbtn">
+    </div>
+    <div class="question">
+        <div class="question__sh" >
+            <span id="questionbox"></span>
+        </div>
+    </div>
+    <div class="answer">
+        <div class="answer__sh">
+            <span id="answerbox"></span>
+        </div>
+    </div>
+    <div class="letters">
+        <div class="letters__1" id="alef" >ض</div>
+        <div class="letters__1" id="be" >ص</div>
+        <div class="letters__1" id="pe" >ق</div>
+        <div class="letters__1" id="te" >ف</div>
+        <div class="letters__1" id="je" >غ</div>
+        <div class="letters__1" id="che" >ع</div>
+        <div class="letters__1" id="he" >ه</div>
+        <div class="letters__1" id="khe" >خ</div>
+        <div  id="pak" >پاک کن</div>
+        <div class="letters__1" id="dal" >ح</div>
+        <div class="letters__1" id="zal" >ج</div>
+        <div class="letters__1" id="re" >چ</div>
+        <div class="letters__1" id="ze" >ش</div>
+        <div class="letters__1" id="sin" >س</div>
+        <div class="letters__1" id="shin" >ی</div>
+        <div class="letters__1" id="sad" >ب</div>
+        <div class="letters__1" id="zad" >ل</div>
+        <div  id="sabt" >ثبت</div>
+        <div class="letters__1" id="ta" >ا</div>
+        <div class="letters__1" id="za" >ت</div>
+        <div class="letters__1" id="ayn" >ن</div>
+        <div class="letters__1" id="ghayn" >م</div>
+        <div class="letters__1" id="kaf" >ک</div>
+        <div class="letters__1" id="ghaf" >گ</div>
+        <div class="letters__1" id="lam" >ظ</div>
+        <div class="letters__1" id="nun" >ژ</div>
+        <div class="letters__1" id="empty">و</div>
+        <div class="letters__1" id="mim" >ث</div>
+        <div class="letters__1" id="mim" >ط</div>
+        <div class="letters__1" id="mim" >و</div>
+        <div class="letters__1" id="ve" >ز</div>
+        <div class="letters__1" id="he2" >ر</div>
+        <div class="letters__1" id="ye">ذ</div>
+        <div class="letters__1" id="ye">د</div> 
+        <div class="letters__1" id="ye">پ</div>
+        <div class="letters__1" id="empty"></div>
+        
+        
+
+    </div>
+    <div class="sahih" id="sahihbox">
+        <div class="sahih__1">
+            <h1>پاسخ درست</h1>
+            <div class="sahih__1--f"><i class="fas fa-smile" style="color:#E34F74;"></i></div>
+        <input type="button" value="باشه" id="sahihbtn">
+        </div>
+    </div>
+    <div class="dobare">
+        <div class="dobare__1">
+            <h1>دوباره امتحان کن</h1>
+            <div class="dobare__1--f"><i class="fas fa-smile" style="color:#E34F74;"></i></div>
+            <input type="button" value="باشه" id="dobarebtn">
+        </div>
+    </div>
+
+
+<script>
+    $(document).ready(function(){
+        var current=""
+        let questions=["واحد پول فرانسه","تعداد رنگ های پرچم فرانسه"," پایتخت فرانسه"]
+        let answers=["یورو","سه","پاریس"]
+        let counter=0
+
+        $("#startbtn").click(function(){
+            $("#questionbox").text(questions[counter])
+        })
+
+        $(".letters__1").click(function(event){
+            if($("#questionbox").text()==""){
+                alert("شروع بازی رو بزن")
+            }
+            else{
+                current=$(this)
+                $("#answerbox").text($("#answerbox").text()+$(this).text())
+            }
+             
+        })
+
+            $("#sabt").click(function(){
+                if($("#answerbox").text()==answers[counter]){
+                    $(".sahih").css({
+                        "display" : "grid",
+                    })
+                    $(".dobare").css({
+                        "display" : "none",
+                    })
+                    counter++
+                    if(counter>2)
+                        counter=0
+                }
+                else{
+                    $(".dobare").css({
+                        "display" : "grid",
+                    })
+                    $(".sahih").css({
+                        "display" : "none",
+                    })
+                }
+
+        $("#sahihbtn").click(function(){
+            $("#answerbox").text("")
+            $("#questionbox").text(questions[counter])
+            $(".sahih").css({
+                "display" : "none",
+            })
+
+        })
+
+        $("#dobarebtn").click(function(){
+            $(".dobare").css({
+                        "display" : "none",
+                    })
+            $("#answerbox").text("")
+        })
+        })
+
+        $("#pak").click(function(){
+            $("#answerbox").text("")
+        })
+
+        // $("#startbtn").click(function(){
+        //     for(let item in obj){
+        //         $("#questionbox").text(item)
+        //     }
+        // })
+
+        // $(".letters__1").click(function(event){
+        //     if($("#questionbox").text()==""){
+        //         alert("شروع بازی رو بزن")
+        //     }
+        //     else{
+        //         current=$(this)
+        //         $("#answerbox").text($("#answerbox").text()+$(this).text())
+        //     }
+             
+        // })
+        // $("#sabt").click(function(){
+        //     for(let item in obj){
+        //         if($("#answerbox").text()==obj[item]){
+        //             $(".sahih").css({
+        //                 "display" : "grid",
+        //             })
+        //             $(".dobare").css({
+        //                 "display" : "none",
+        //             })
+        //         }
+        //         else{
+        //             $(".dobare").css({
+        //                 "display" : "grid",
+        //             })
+        //             $(".sahih").css({
+        //                 "display" : "none",
+        //             })
+        //         }
+        //     }
+        // })
+        // $("#sahihbtn").click(function(){
+        //     $(".sahih").css({
+        //                 "display" : "none",
+        //             })
+        //     for(let item in obj){
+
+        //     }
+        //     $("#answerbox").text("")
+        // })
+        // $("#dobarebtn").click(function(){
+        //     $(".dobare").css({
+        //                 "display" : "none",
+        //             })
+        //     $("#answerbox").text("")
+        // })
+        // $("#pak").click(function(){
+        //     $("#answerbox").text("")
+        // })
+        // $("#badi").click(function(){
+        //     for(let item in obj){
+        //         newar.push(item)
+        //         $("#questionbox").text(newar[idx++])
+        //         if(idx>3) idx=0
+        //     }
+        // })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+@keyframes anime {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.start input {
+  border: none;
+  outline: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  background-color: #E34F74;
+  color: #FCB0B3;
+  transition: all 0.5s ease-in;
+  font-size: 24px;
+  margin-top: 7px;
+}
+.start input:hover {
+  background-color: #FCB0B3;
+  color: #201A23;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.question__sh {
+  background-color: #FCB0B3;
+  border: 1px solid #201A23;
+  border-radius: 30px;
+  width: 500px;
+  height: 100px;
+  margin: 7px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.question__sh p {
+  font-size: 24px;
+}
+
+.answer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.answer__sh {
+  background-color: #FCB0B3;
+  border: 1px solid #201A23;
+  border-radius: 30px;
+  width: 500px;
+  height: 100px;
+  margin: 7px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+}
+.answer__sh--d {
+  width: 60px;
+  height: 10px;
+  background-color: #201A23;
+  border-radius: 10px;
+}
+.letters {
+  width: 100%;
+  height: 300PX;
+  background-color: #FCB0B3;
+ display: grid;
+ grid-template-columns: auto  auto auto auto auto auto auto auto auto;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.letters__1 {
+  padding: 12px 24px;
+  color: black;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 24px;
+  background-color: #E34F74;
+  transition: all 0.5s ease-in;
+}
+.letters__1:hover {
+  background-color: #FCECC9;
+}
+.letters #sabt {
+  padding: 16px 32px;
+  color: black;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 24px;
+  background-color: #E34F74;
+  transition: all 0.5s ease-in;
+}
+.letters #sabt:hover {
+  background-color: #FCECC9;
+}
+.letters #pak {
+  padding: 16px 32px;
+  color: black;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 24px;
+  background-color: #E34F74;
+  transition: all 0.5s ease-in;
+}
+.letters #pak:hover {
+  background-color: #FCECC9;
+}
+#empty{
+  visibility: hidden;
+}
+.sahih {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(32, 26, 35, 0.8901960784);
+  z-index: 5;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: grid;
+  display: none;
+  grid-template-columns: auto;
+  align-items: center;
+  justify-content: center;
+}
+.sahih__1 {
+  background-color: #FCECC9;
+  width: 550px;
+  height: 450px;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: anime 1s;
+}
+.sahih__1--f {
+  font-size: 30px;
+}
+.sahih__1 input {
+  padding: 12px 24px;
+  background-color: #E34F74;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  font-size: 24px;
+  transition: 0.5s ease;
+}
+.sahih__1 input:hover {
+  background-color: #FCB0B3;
+}
+.sahih__1 h1 {
+  color: #E34F74;
+  font-size: 120px;
+  text-align: center;
+  align-items: center;
+}
+
+.dobare {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(32, 26, 35, 0.8901960784);
+  z-index: 5;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: grid;
+  display: none;
+  grid-template-columns: auto;
+  align-items: center;
+  justify-content: center;
+}
+.dobare__1 {
+  background-color: #FCECC9;
+  width: 550px;
+  height: 450px;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: anime 1s;
+}
+.dobare__1--f {
+  font-size: 30px;
+}
+.dobare__1 input {
+  padding: 12px 24px;
+  background-color: #E34F74;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  font-size: 24px;
+  transition: 0.5s ease;
+}
+.dobare__1 input:hover {
+  background-color: #FCB0B3;
+}
+.dobare__1 h1 {
+  color: #E34F74;
+  font-size: 90px;
+  text-align: center;
+  align-items: center;
+}/*# sourceMappingURL=style.css.map */
